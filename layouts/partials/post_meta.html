@@ -1,0 +1,36 @@
+<div class="post-meta">
+    {{ if .Date }}
+        <span class="post-meta-item">
+            <span class="icon">📅</span>
+            创建: {{ .Date.Format "2006-01-02" }}
+        </span>
+    {{ end }}
+
+    {{ if and .Lastmod (ne .Lastmod .Date) }}
+        <span class="post-meta-item">
+            <span class="icon">🔄</span>
+            更新: {{ .Lastmod.Format "2006-01-02" }}
+        </span>
+    {{ end }}
+
+    {{ if .ReadingTime }}
+        <span class="post-meta-item">
+            <span class="icon">⏳</span>
+            时长: {{ .ReadingTime }}分钟
+        </span>
+    {{ end }}
+
+    {{ if .WordCount }}
+        <span class="post-meta-item">
+            <span class="icon">📝</span>
+            字数: {{ .WordCount }}字
+        </span>
+    {{ end }}
+	
+	{{ if .Params.author }}
+        <span class="post-meta-item">
+            <span class="icon">👤</span>
+            {{ .Params.author }}
+        </span>
+    {{ end }}
+</div>
