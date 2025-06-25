@@ -59,7 +59,7 @@ languages:
   en:
     languageName: English
     languageCode: en
-    weight: 2
+    weight: 1
     contentDir: content/English
     
     title: "Xiaoqingshan's blog"
@@ -114,7 +114,7 @@ languages:
   zh:
     languageName: 简体中文
     languageCode: zh
-    weight: 1
+    weight: 2
     contentDir: content/chinese
 
     title: "肖青山的博客"
