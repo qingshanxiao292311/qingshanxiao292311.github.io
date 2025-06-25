@@ -59,7 +59,7 @@ languages:
     languageName: 简体中文
     languageCode: zh-cn
     weight: 1
-    contentDir: content/chinese
+    contentDir: content/Chinese
 
     title: "肖青山的博客"
     description: ''
