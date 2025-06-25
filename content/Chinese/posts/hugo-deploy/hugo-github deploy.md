@@ -1,9 +1,14 @@
-+++
-date = '2025-06-09T17:56:12+08:00'
-draft = false
-title = 'Hugo Github pages部署'
-
-+++
+---
+title: 'Hugo + Github pages部署'
+date: '2025-06-09T17:56:12+08:00'
+draft: false
+author: "肖青山"
+lastmod: 2025-06-15
+draft: false  # 设为 false 发布
+categories: ["Deploy", "Hugo"]
+tags: ["Hugo", "PaperMod", "github"]
+translationKey: false
+---
 
 
 
@@ -19,7 +24,7 @@ title = 'Hugo Github pages部署'
 
 windows 10 桌面
 
-### 1.1 安装 git 客户端
+## 1.1 安装 git 客户端
 
 https://git-scm.com/downloads
 
@@ -27,7 +32,7 @@ https://git-scm.com/downloads
 
 # 2. 安装 hugo
 
-### 2.1 先安装 [Chocolatey](https://chocolatey.org/install)（Windows 包管理器）
+## 2.1 先安装 [Chocolatey](https://chocolatey.org/install)（Windows 包管理器）
 
 用管理员方式打开powershell
 
@@ -35,13 +40,13 @@ https://git-scm.com/downloads
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
-### 2.2 通过 Chocolatey 安装 Hugo
+## 2.2 通过 Chocolatey 安装 Hugo
 
 ```
 choco install hugo-extended -y
 ```
 
-### 2.3 验证安装
+## 2.3 验证安装
 
 ```
 hugo version
@@ -51,7 +56,7 @@ hugo version
 
 # 3. 创建 `hugo` 博客项目
 
-### 3.1 生成新站点
+## 3.1 生成新站点
 
 在任意目录下，本文在 D：目录
 
@@ -61,7 +66,7 @@ hugo new site my-blog
 cd my-blog
 ```
 
-### 3.2 克隆主题到本地（以 [PaperMod](https://github.com/adityatelange/hugo-PaperMod) 为例）
+## 3.2 克隆主题到本地（以 [PaperMod](https://github.com/adityatelange/hugo-PaperMod) 为例）
 
 参考：https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-installation/
 
@@ -70,7 +75,7 @@ git init
 git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1
 ```
 
-### 3.3 配置主题
+## 3.3 配置主题
 
 修改hugo.yml
 
@@ -107,7 +112,7 @@ draft: false  # 设为 false 发布
 
 # 5. 部署到 GitHub Pages
 
-### 5.1 创建 GitHub 仓库
+## 5.1 创建 GitHub 仓库
 
 在 `github` 下新建 `repository_name`:  <用户名.`github.io`> , 用于用户站点访问。其中仓库名必须是 <用户名.`github.io`>
 
@@ -115,7 +120,7 @@ draft: false  # 设为 false 发布
 
 ![repository name](repo.jpg)
 
-### 5.2 配置 GitHub Actions
+## 5.2 配置 GitHub Actions
 
 在博客根目录创建 `.github/workflows/deploy.yml`：
 
@@ -157,7 +162,7 @@ draft: false  # 设为 false 发布
     
     
 
-### 5.3 提交代码到仓库
+## 5.3 提交代码到仓库
 
 ```
 cd my-blog
@@ -169,7 +174,7 @@ git remote add origin https://github.com/<你的用户名>/<你的用户名>.git
 git push -u origin main
 ```
 
-###  5.4 访问博客
+##  5.4 访问博客
 
 等待 Actions 完成（约1分钟），访问 `https://<你的用户名>.github.io`
 
@@ -177,7 +182,7 @@ git push -u origin main
 
 # 6. 部署遇到的问题
 
-### 6.1 提交代码无权限
+## 6.1 提交代码无权限
 
 ```
 

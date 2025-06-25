@@ -1,14 +1,14 @@
-+++
-title = 'Hugo + Github pages部署'
-date = '2025-06-09T17:56:12+08:00'
-draft = false
+---
+title: 'Hugo + Github pages部署'
+date: '2025-06-09T17:56:12+08:00'
+draft: false
 author: "肖青山"
 lastmod: 2025-06-15
 draft: false  # 设为 false 发布
 categories: ["Deploy", "Hugo"]
 tags: ["Hugo", "PaperMod", "github"]
 translationKey: false
-+++
+---
 
 
 
@@ -80,10 +80,10 @@ git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/Pape
 修改hugo.yml
 
 ```
-baseURL = 'https://qingshanxiao292311.github.io/'   # baseurl 为 https://<github repository> 地址
-languageCode = 'zh-cn'
-title = 'My New Hugo Site'                          # 标题
-theme = 'PaperMod'                                  # 主题，如果用github上的，可以使用remote-theme：xxx定义
+baseURL: "https://qingshanxiao292311.github.io/"   # baseurl 为 https://<github repository> 地址
+languageCode: zh-cn
+title: "My New Hugo Site"                          # 标题
+theme: PaperMod                                  # 主题，如果用github上的，可以使用remote-theme：xxx定义
 ```
 
 
