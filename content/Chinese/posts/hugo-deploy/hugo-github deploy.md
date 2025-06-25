@@ -1,10 +1,10 @@
 ---
-title: 'Hugo + Github pages部署'
-date: '2025-06-09T17:56:12+08:00'
+title: "Hugo + Github pages部署"
+date: 2025-06-09
 draft: false
 author: "肖青山"
 lastmod: 2025-06-15
-draft: false  # 设为 false 发布
+draft: false
 categories: ["Deploy", "Hugo"]
 tags: ["Hugo", "PaperMod", "github"]
 translationKey: false
