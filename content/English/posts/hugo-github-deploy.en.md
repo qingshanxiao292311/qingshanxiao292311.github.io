@@ -8,6 +8,7 @@ draft: false  # 设为 false 发布
 categories: ["Deploy", "Hugo"]
 tags: ["Hugo", "PaperMod", "github"]
 translationKey: true
+lang: en
 ---
 
 
