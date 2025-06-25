@@ -89,7 +89,7 @@ languages:
       main:
         - identifier: home
           name: 🏠 home
-          url: /
+          url: /zh/
           weight: 10
         - identifier: search
           name: 🔍 search
@@ -144,7 +144,7 @@ languages:
       main:
         - identifier: home
           name: 🏠 主页
-          url: /
+          url: /en/
           weight: 10
         - identifier: search
           name: 🔍 搜索
