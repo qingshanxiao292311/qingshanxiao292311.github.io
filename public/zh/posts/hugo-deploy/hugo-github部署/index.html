@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Hugo &#43; Github pages部署 | 肖青山的博客</title>
+<meta name="keywords" content="Hugo, PaperMod, github">
+<meta name="description" content="
+环境准备
+安装 hugo
+创建 hugo 博客项目
+本地访问
+部署到github pages
+
+1. 环境准备
+windows 10 桌面
+1.1 安装 git 客户端
+https://git-scm.com/downloads
+2. 安装 hugo
+2.1 先安装 Chocolatey（Windows 包管理器）
+用管理员方式打开powershell">
+<meta name="author" content="肖青山">
+<link rel="canonical" href="http://localhost:1313/zh/posts/hugo-deploy/hugo-github%E9%83%A8%E7%BD%B2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2f47addd604971642ad7bda70ddbfe55a643113566b8225f4d166c612da464d3.css" integrity="sha256-L0et3WBJcWQq172nDdv&#43;VaZDETVmuCJfTRZsYS2kZNM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="http://localhost:1313/zh/posts/hugo-deploy/hugo-github%E9%83%A8%E7%BD%B2/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/en/posts/hugo-deploy/hugo-github%E9%83%A8%E7%BD%B2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/zh/" accesskey="h" title="肖青山的博客 (Alt + H)">肖青山的博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="http://localhost:1313/en/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/zh/" title="🏠 主页">
+                    <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/zh/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/zh/archives/" title="⏱ 时间轴">
+                    <span>⏱ 时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/zh/categories/" title="📁 分类">
+                    <span>📁 分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/zh/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/zh/">主页</a>&nbsp;»&nbsp;<a href="http://localhost:1313/zh/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Hugo &#43; Github pages部署
+    </h1>
+    <div class="post-meta"><div class="post-meta">
+    
+        <span class="post-meta-item">
+            <span class="icon">📅</span>
+            创建: 2025-06-09
+        </span>
+    
+
+    
+        <span class="post-meta-item">
+            <span class="icon">🔄</span>
+            更新: 2025-06-15
+        </span>
+    
+
+    
+        <span class="post-meta-item">
+            <span class="icon">⏳</span>
+            时长: 2分钟
+        </span>
+    
+
+    
+        <span class="post-meta-item">
+            <span class="icon">📝</span>
+            字数: 956字
+        </span>
+    
+	
+	
+        <span class="post-meta-item">
+            <span class="icon">👤</span>
+            肖青山
+        </span>
+    
+</div>&nbsp;|&nbsp;语言:
+<ul class="i18n_list">
+    <li>
+        <a href="http://localhost:1313/en/posts/hugo-deploy/hugo-github%E9%83%A8%E7%BD%B2/">English</a>
+    </li>
+</ul>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87" aria-label="1. 环境准备">1. 环境准备</a><ul>
+                        
+                <li>
+                    <a href="#11-%e5%ae%89%e8%a3%85-git-%e5%ae%a2%e6%88%b7%e7%ab%af" aria-label="1.1 安装 git 客户端">1.1 安装 git 客户端</a></li></ul>
+                </li>
+                <li>
+                    <a href="#2-%e5%ae%89%e8%a3%85-hugo" aria-label="2. 安装 hugo">2. 安装 hugo</a><ul>
+                        
+                <li>
+                    <a href="#21-%e5%85%88%e5%ae%89%e8%a3%85-chocolateywindows-%e5%8c%85%e7%ae%a1%e7%90%86%e5%99%a8" aria-label="2.1 先安装 Chocolatey（Windows 包管理器）">2.1 先安装 Chocolatey（Windows 包管理器）</a></li>
+                <li>
+                    <a href="#22-%e9%80%9a%e8%bf%87-chocolatey-%e5%ae%89%e8%a3%85-hugo" aria-label="2.2 通过 Chocolatey 安装 Hugo">2.2 通过 Chocolatey 安装 Hugo</a></li>
+                <li>
+                    <a href="#23-%e9%aa%8c%e8%af%81%e5%ae%89%e8%a3%85" aria-label="2.3 验证安装">2.3 验证安装</a></li></ul>
+                </li>
+                <li>
+                    <a href="#3-%e5%88%9b%e5%bb%ba-hugo-%e5%8d%9a%e5%ae%a2%e9%a1%b9%e7%9b%ae" aria-label="3. 创建 hugo 博客项目">3. 创建 hugo 博客项目</a><ul>
+                        
+                <li>
+                    <a href="#31-%e7%94%9f%e6%88%90%e6%96%b0%e7%ab%99%e7%82%b9" aria-label="3.1 生成新站点">3.1 生成新站点</a></li>
+                <li>
+                    <a href="#32-%e5%85%8b%e9%9a%86%e4%b8%bb%e9%a2%98%e5%88%b0%e6%9c%ac%e5%9c%b0%e4%bb%a5-papermod-%e4%b8%ba%e4%be%8b" aria-label="3.2 克隆主题到本地（以 PaperMod 为例）">3.2 克隆主题到本地（以 PaperMod 为例）</a></li>
+                <li>
+                    <a href="#33-%e9%85%8d%e7%bd%ae%e4%b8%bb%e9%a2%98" aria-label="3.3 配置主题">3.3 配置主题</a></li></ul>
+                </li>
+                <li>
+                    <a href="#4-%e6%9c%ac%e5%9c%b0%e8%ae%bf%e9%97%ae%e5%8d%9a%e5%ae%a2" aria-label="4. 本地访问博客">4. 本地访问博客</a></li>
+                <li>
+                    <a href="#5-%e9%83%a8%e7%bd%b2%e5%88%b0-github-pages" aria-label="5. 部署到 GitHub Pages">5. 部署到 GitHub Pages</a><ul>
+                        
+                <li>
+                    <a href="#51-%e5%88%9b%e5%bb%ba-github-%e4%bb%93%e5%ba%93" aria-label="5.1 创建 GitHub 仓库">5.1 创建 GitHub 仓库</a></li>
+                <li>
+                    <a href="#52-%e9%85%8d%e7%bd%ae-github-actions" aria-label="5.2 配置 GitHub Actions">5.2 配置 GitHub Actions</a></li>
+                <li>
+                    <a href="#53-%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81%e5%88%b0%e4%bb%93%e5%ba%93" aria-label="5.3 提交代码到仓库">5.3 提交代码到仓库</a></li>
+                <li>
+                    <a href="#54-%e8%ae%bf%e9%97%ae%e5%8d%9a%e5%ae%a2" aria-label="5.4 访问博客">5.4 访问博客</a></li></ul>
+                </li>
+                <li>
+                    <a href="#6-%e9%83%a8%e7%bd%b2%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98" aria-label="6. 部署遇到的问题">6. 部署遇到的问题</a><ul>
+                        
+                <li>
+                    <a href="#61-%e6%8f%90%e4%ba%a4%e4%bb%a3%e7%a0%81%e6%97%a0%e6%9d%83%e9%99%90" aria-label="6.1 提交代码无权限">6.1 提交代码无权限</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><ul>
+<li>环境准备</li>
+<li>安装 <code>hugo</code></li>
+<li>创建 <code>hugo</code> 博客项目</li>
+<li>本地访问</li>
+<li>部署到<code>github pages</code></li>
+</ul>
+<h1 id="1-环境准备">1. 环境准备<a hidden class="anchor" aria-hidden="true" href="#1-环境准备">#</a></h1>
+<p>windows 10 桌面</p>
+<h2 id="11-安装-git-客户端">1.1 安装 git 客户端<a hidden class="anchor" aria-hidden="true" href="#11-安装-git-客户端">#</a></h2>
+<p><a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<h1 id="2-安装-hugo">2. 安装 hugo<a hidden class="anchor" aria-hidden="true" href="#2-安装-hugo">#</a></h1>
+<h2 id="21-先安装-chocolateywindows-包管理器">2.1 先安装 <a href="https://chocolatey.org/install">Chocolatey</a>（Windows 包管理器）<a hidden class="anchor" aria-hidden="true" href="#21-先安装-chocolateywindows-包管理器">#</a></h2>
+<p>用管理员方式打开powershell</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Set</span><span class="o">-</span><span class="n">ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-</span><span class="n">Scope</span> <span class="n">Process</span> <span class="o">-</span><span class="n">Force</span><span class="p">;</span> <span class="p">[</span><span class="n">System</span><span class="o">.</span><span class="n">Net</span><span class="o">.</span><span class="n">ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span> <span class="o">=</span> <span class="p">[</span><span class="n">System</span><span class="o">.</span><span class="n">Net</span><span class="o">.</span><span class="n">ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span> <span class="o">-</span><span class="n">bor</span> <span class="mi">3072</span><span class="p">;</span> <span class="n">iex</span> <span class="p">((</span><span class="n">New</span><span class="o">-</span><span class="ne">Object</span> <span class="n">System</span><span class="o">.</span><span class="n">Net</span><span class="o">.</span><span class="n">WebClient</span><span class="p">)</span><span class="o">.</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="22-通过-chocolatey-安装-hugo">2.2 通过 Chocolatey 安装 Hugo<a hidden class="anchor" aria-hidden="true" href="#22-通过-chocolatey-安装-hugo">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">choco install hugo-extended -y
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="23-验证安装">2.3 验证安装<a hidden class="anchor" aria-hidden="true" href="#23-验证安装">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="3-创建-hugo-博客项目">3. 创建 <code>hugo</code> 博客项目<a hidden class="anchor" aria-hidden="true" href="#3-创建-hugo-博客项目">#</a></h1>
+<h2 id="31-生成新站点">3.1 生成新站点<a hidden class="anchor" aria-hidden="true" href="#31-生成新站点">#</a></h2>
+<p>在任意目录下，本文在 D：目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd d:
+</span></span><span class="line"><span class="cl">hugo new site my-blog
+</span></span><span class="line"><span class="cl">cd my-blog
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="32-克隆主题到本地以-papermod-为例">3.2 克隆主题到本地（以 <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> 为例）<a hidden class="anchor" aria-hidden="true" href="#32-克隆主题到本地以-papermod-为例">#</a></h2>
+<p>参考：https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-installation/</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git submodule add  --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+</span></span><span class="line"><span class="cl">git submodule update --init --recursive
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="33-配置主题">3.3 配置主题<a hidden class="anchor" aria-hidden="true" href="#33-配置主题">#</a></h2>
+<p>修改hugo.yml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">baseURL: &#34;https://qingshanxiao292311.github.io/&#34;   # baseurl 为 https://&lt;github repository&gt; 地址
+</span></span><span class="line"><span class="cl">languageCode: zh-cn
+</span></span><span class="line"><span class="cl">title: &#39;My New Hugo Site&#39;                          # 标题
+</span></span><span class="line"><span class="cl">theme: PaperMod                                    # 主题，如果用github上的，可以使用remote-theme：xxx定义
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="4-本地访问博客">4. 本地访问博客<a hidden class="anchor" aria-hidden="true" href="#4-本地访问博客">#</a></h1>
+<p>使用 hugo 命令创建</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. hugo new content posts\first.md
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">在my-blog/content/posts 下即生成了一个markdown格式的文章
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 编辑 first.md
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;我的第一篇文章&#34;
+</span></span><span class="line"><span class="cl">date: 2025-06-09
+</span></span><span class="line"><span class="cl">draft: false  # 设为 false 发布
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. 启动本地服务器： hugo server -D 
+</span></span><span class="line"><span class="cl">4. 浏览器访问： http://localhost:1313  # 实时预览效果（修改内容会自动刷新）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="5-部署到-github-pages">5. 部署到 GitHub Pages<a hidden class="anchor" aria-hidden="true" href="#5-部署到-github-pages">#</a></h1>
+<h2 id="51-创建-github-仓库">5.1 创建 GitHub 仓库<a hidden class="anchor" aria-hidden="true" href="#51-创建-github-仓库">#</a></h2>
+<p>在 <code>github</code> 下新建 <code>repository_name</code>:  &lt;用户名.<code>github.io</code>&gt; , 用于用户站点访问。其中仓库名必须是 &lt;用户名.<code>github.io</code>&gt;</p>
+<p>新建仓库名 <code>qingshanxiao292311.github.io</code></p>
+<p><img alt="repository name" loading="lazy" src="repo.jpg"></p>
+<h2 id="52-配置-github-actions">5.2 配置 GitHub Actions<a hidden class="anchor" aria-hidden="true" href="#52-配置-github-actions">#</a></h2>
+<p>在博客根目录创建 <code>.github/workflows/deploy.yml</code>：</p>
+<ul>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">name: Deploy Hugo site to GitHub Pages
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">on:
+</span></span><span class="line"><span class="cl">  push:
+</span></span><span class="line"><span class="cl">    branches:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   - main
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">jobs:
+</span></span><span class="line"><span class="cl">  build-deploy:
+</span></span><span class="line"><span class="cl">    runs-on: ubuntu-latest
+</span></span><span class="line"><span class="cl">    steps:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   - name: Checkout
+</span></span><span class="line"><span class="cl">     uses: actions/checkout@v4
+</span></span><span class="line"><span class="cl">     with:
+</span></span><span class="line"><span class="cl">       submodules: true
+</span></span><span class="line"><span class="cl">       fetch-depth: 0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   - name: Setup Hugo
+</span></span><span class="line"><span class="cl">     uses: peaceiris/actions-hugo@v3
+</span></span><span class="line"><span class="cl">        with:
+</span></span><span class="line"><span class="cl">     hugo-version: &#39;latest&#39;
+</span></span><span class="line"><span class="cl">     extended: true
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  - name: Build
+</span></span><span class="line"><span class="cl">    run: hugo --minify
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  - name: Deploy
+</span></span><span class="line"><span class="cl">    uses: peaceiris/actions-gh-pages@v4
+</span></span><span class="line"><span class="cl">    with:
+</span></span><span class="line"><span class="cl">      github_token: ${{ secrets.GITHUB_TOKEN }}
+</span></span><span class="line"><span class="cl">      publish_dir: ./public
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="53-提交代码到仓库">5.3 提交代码到仓库<a hidden class="anchor" aria-hidden="true" href="#53-提交代码到仓库">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd my-blog
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git branch -M main
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m &#34;Initial Huge site&#34;
+</span></span><span class="line"><span class="cl">git remote add origin https://github.com/&lt;你的用户名&gt;/&lt;你的用户名&gt;.github.io.git
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="54-访问博客">5.4 访问博客<a hidden class="anchor" aria-hidden="true" href="#54-访问博客">#</a></h2>
+<p>等待 Actions 完成（约1分钟），访问 <code>https://&lt;你的用户名&gt;.github.io</code></p>
+<h1 id="6-部署遇到的问题">6. 部署遇到的问题<a hidden class="anchor" aria-hidden="true" href="#6-部署遇到的问题">#</a></h1>
+<h2 id="61-提交代码无权限">6.1 提交代码无权限<a hidden class="anchor" aria-hidden="true" href="#61-提交代码无权限">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/usr/bin/git push origin gh-pages 
+</span></span><span class="line"><span class="cl">remote: Permission to qingshanxiao292311/xiaoqingshan.github.io.git denied to github-actions[bot].  
+</span></span><span class="line"><span class="cl">fatal: unable to access 
+</span></span><span class="line"><span class="cl">&#39;https://github.com/qingshanxiao292311/xiaoqingshan.github.io.git/&#39;: The requested URL returned error: 403 
+</span></span><span class="line"><span class="cl">Error: Action failed with &#34;The process &#39;/usr/bin/git&#39; failed with exit code 128&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>仓库 Settings → Actions → General</strong> 中调整：</p>
+<ul>
+<li>找到 <strong>Workflow permissions</strong>，勾选 <strong>Read and write permissions</strong></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/zh/tags/hugo/">Hugo</a></li>
+      <li><a href="http://localhost:1313/zh/tags/papermod/">PaperMod</a></li>
+      <li><a href="http://localhost:1313/zh/tags/github/">Github</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/zh/">肖青山的博客</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
