@@ -1,5 +1,5 @@
 ---
-title: "利用Hugo & Github pages 部署博客"
+title: "利用 Hugo & Github pages 部署博客"
 date: '2025-06-09T17:56:12+08:00'
 draft: false
 author: "肖青山"
@@ -117,7 +117,7 @@ draft: false  # 设为 false 发布
 
 新建仓库名 `qingshanxiao292311.github.io`
 
-![新建仓库名](/images/repo.png)
+![新建仓库名](/images/hugo/repo.png)
 
 ## 5.2 配置 GitHub Actions
 
