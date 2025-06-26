@@ -1,14 +1,19 @@
+/* 目录*/
 .toc {
     float: left;
-    margin-right: 20px; /* 目录与文章内容之间的间距 */
-    width: 250px; /* 自定义目录宽度 */
+    margin-right: 20px;   /* 目录与文章内容之间的间距 */
+    width: 240px;         /* 自定义目录宽度 */
     position: sticky;
-    top: 20px; /* 距离顶部的高度 */
+    top: 20px;            /* 距离顶部的高度 */
+	font-size: 14px;      /* 字体大小 */
 }
 
-/* 确保文章内容不会被目录覆盖 */
+/* 文章内容更宽 */
 .post-content {
-    margin-left: 280px; /* 留出目录的宽度 */
+    margin-left: 280px;    /* 留出与目录的间距 */
+    max-width: none;       /* 移除默认的最大宽度限制 */
+    width: 95%;            /* 设置文章内容宽度为容器宽度的90%，可根据需要调整 */
+    margin-right: 5%;      /* 右边留出一定间距，避免贴边 */
 }
 
 
@@ -46,6 +51,27 @@
     display: none !important;
 }*/
 
+/* 去除目录前的markmod 符号(. o)*/
 .toc li::marker {
     content: none;
+}
+
+/*适配移动小屏*/
+@media screen and (max-width: 768px) {
+    .toc {
+        float: none;
+        width: 100%;
+        position: static;
+    }
+    .post-content {
+        margin-left: 0;
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/*跳转上下篇文章*/
+.next, .prev {
+    font-size: 15px;
+    margin: 10px;
 }
