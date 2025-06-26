@@ -117,7 +117,7 @@ draft: false  # 设为 false 发布
 
 新建仓库名 `qingshanxiao292311.github.io`
 
-![新建仓库名](/images/repo.png)
+![新建仓库名](/images/hugo/repo.png)
 
 ## 5.2 配置 GitHub Actions
 
