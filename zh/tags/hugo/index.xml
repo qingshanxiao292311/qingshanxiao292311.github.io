@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hugo on 肖青山的博客</title>
+    <link>https://qingshanxiao292311.github.io/zh/tags/hugo/</link>
+    <description>Recent content in Hugo on 肖青山的博客</description>
+    <generator>Hugo -- 0.147.9</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 26 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://qingshanxiao292311.github.io/zh/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo &amp; PaperMod 主题配置</title>
+      <link>https://qingshanxiao292311.github.io/zh/posts/hugo/hugo--papermod-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/posts/hugo/hugo--papermod-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;使用hugo的PaperMod 主题，在默认的基础上进行一些修改，已便更加美观和好用。&lt;/p&gt;
+&lt;h1 id=&#34;1-hugo-文件夹管理&#34;&gt;1. Hugo 文件夹管理&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;archetypes&lt;/code&gt;：不用管&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;asset&lt;/code&gt;：&lt;a href=&#34;https://www.yunyitang.me/hugo-papermod-blog/#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80-htmlcss&#34;&gt;自定义的 CSS 和 JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;content&lt;/code&gt;：用于放博客内容&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;data&lt;/code&gt;：不用管&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;layouts&lt;/code&gt;：&lt;a href=&#34;https://www.yunyitang.me/hugo-papermod-blog/#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80-htmlcss&#34;&gt;自定义的 HTML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;public&lt;/code&gt;：项目导出文件 - 用于静态网页部署，&lt;code&gt;hugo server -D&lt;/code&gt; 生成的网页在这个目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;static&lt;/code&gt;：存放图片&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;themes&lt;/code&gt;：主题 - &lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod/&#34;&gt;PaperMod&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;hugo 文件夹&#34; loading=&#34;lazy&#34; src=&#34;https://qingshanxiao292311.github.io/images/hugo/dir.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>利用Hugo &amp; Github pages 部署博客</title>
+      <link>https://qingshanxiao292311.github.io/zh/posts/hugo/%E5%88%A9%E7%94%A8-hugo--github-pages-%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Mon, 09 Jun 2025 17:56:12 +0800</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/posts/hugo/%E5%88%A9%E7%94%A8-hugo--github-pages-%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;环境准备&lt;/li&gt;
+&lt;li&gt;安装 &lt;code&gt;hugo&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;创建 &lt;code&gt;hugo&lt;/code&gt; 博客项目&lt;/li&gt;
+&lt;li&gt;本地访问&lt;/li&gt;
+&lt;li&gt;部署到&lt;code&gt;github pages&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-环境准备&#34;&gt;1. 环境准备&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;windows 10&lt;/code&gt; 桌面&lt;/p&gt;
+&lt;h2 id=&#34;11-安装-git-客户端&#34;&gt;1.1 安装 git 客户端&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;git 下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2-安装-hugo&#34;&gt;2. 安装 hugo&lt;/h1&gt;
+&lt;h2 id=&#34;21-先安装-chocolateywindows-包管理器&#34;&gt;2.1 先安装 &lt;a href=&#34;https://chocolatey.org/install&#34;&gt;Chocolatey&lt;/a&gt;（Windows 包管理器）&lt;/h2&gt;
+&lt;p&gt;用管理员方式打开&lt;code&gt;powershell&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

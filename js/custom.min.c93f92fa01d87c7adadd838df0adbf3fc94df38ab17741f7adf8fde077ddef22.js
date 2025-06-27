@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const e=document.querySelectorAll('.post-content a[href^="http"]');e.forEach(e=>{e.hostname!==window.location.hostname&&(e.setAttribute("target","_blank"),e.setAttribute("rel","noopener noreferrer"))})})
