@@ -6,8 +6,22 @@
     <description>Recent content in Categories on 肖青山的博客</description>
     <generator>Hugo -- 0.147.9</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 26 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://qingshanxiao292311.github.io/zh/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://qingshanxiao292311.github.io/zh/categories/git/</link>
+      <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/categories/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Yapi</title>
+      <link>https://qingshanxiao292311.github.io/zh/categories/yapi/</link>
+      <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/categories/yapi/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Hugo</title>
       <link>https://qingshanxiao292311.github.io/zh/categories/hugo/</link>

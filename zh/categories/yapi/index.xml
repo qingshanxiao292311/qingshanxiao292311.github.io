@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Yapi on 肖青山的博客</title>
+    <link>https://qingshanxiao292311.github.io/zh/categories/yapi/</link>
+    <description>Recent content in Yapi on 肖青山的博客</description>
+    <generator>Hugo -- 0.147.9</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://qingshanxiao292311.github.io/zh/categories/yapi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>yapi 本地部署</title>
+      <link>https://qingshanxiao292311.github.io/zh/posts/deploy/yapi-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/posts/deploy/yapi-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;p&gt;在开发过程中，为了方便前后端新增，查看，修改 &lt;code&gt;RESTful API&lt;/code&gt;接口，需要一个用于管理API的平台，YApi 是一款高效、易用、功能强大的开源 API 管理平台，特别适合中文开发团队使用。以下是其主要特点：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
