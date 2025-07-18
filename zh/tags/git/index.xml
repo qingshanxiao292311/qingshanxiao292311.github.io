@@ -6,12 +6,12 @@
     <description>Recent content in Git on 肖青山的博客</description>
     <generator>Hugo -- 0.148.1</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://qingshanxiao292311.github.io/zh/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>gitea 本地部署</title>
       <link>https://qingshanxiao292311.github.io/zh/posts/deploy/gitea-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</link>
-      <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
       <guid>https://qingshanxiao292311.github.io/zh/posts/deploy/gitea-%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</guid>
       <description>&lt;h1 id=&#34;1-环境准备&#34;&gt;1. 环境准备&lt;/h1&gt;
 &lt;ul&gt;

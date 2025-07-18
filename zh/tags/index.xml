@@ -6,27 +6,13 @@
     <description>Recent content in Tags on 肖青山的博客</description>
     <generator>Hugo -- 0.148.1</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://qingshanxiao292311.github.io/zh/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploy</title>
       <link>https://qingshanxiao292311.github.io/zh/tags/deploy/</link>
-      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://qingshanxiao292311.github.io/zh/tags/deploy/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Jenkins</title>
-      <link>https://qingshanxiao292311.github.io/zh/tags/jenkins/</link>
-      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://qingshanxiao292311.github.io/zh/tags/jenkins/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Git</title>
-      <link>https://qingshanxiao292311.github.io/zh/tags/git/</link>
       <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://qingshanxiao292311.github.io/zh/tags/git/</guid>
+      <guid>https://qingshanxiao292311.github.io/zh/tags/deploy/</guid>
       <description></description>
     </item>
     <item>
@@ -55,6 +41,34 @@
       <link>https://qingshanxiao292311.github.io/zh/tags/github/</link>
       <pubDate>Mon, 09 Jun 2025 17:56:12 +0800</pubDate>
       <guid>https://qingshanxiao292311.github.io/zh/tags/github/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gitea</title>
+      <link>https://qingshanxiao292311.github.io/zh/tags/gitea/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/tags/gitea/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jenkins</title>
+      <link>https://qingshanxiao292311.github.io/zh/tags/jenkins/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>K8s</title>
+      <link>https://qingshanxiao292311.github.io/zh/tags/k8s/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/tags/k8s/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://qingshanxiao292311.github.io/zh/tags/git/</link>
+      <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/tags/git/</guid>
       <description></description>
     </item>
   </channel>

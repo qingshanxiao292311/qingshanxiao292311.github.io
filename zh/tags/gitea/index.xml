@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Gitea on 肖青山的博客</title>
+    <link>https://qingshanxiao292311.github.io/zh/tags/gitea/</link>
+    <description>Recent content in Gitea on 肖青山的博客</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 23 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://qingshanxiao292311.github.io/zh/tags/gitea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>k8s&#43;gitea&#43;jenkins搭建CI环境</title>
+      <link>https://qingshanxiao292311.github.io/zh/posts/deploy/k8s&#43;gitea&#43;jenkins%E6%90%AD%E5%BB%BAci%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/posts/deploy/k8s&#43;gitea&#43;jenkins%E6%90%AD%E5%BB%BAci%E7%8E%AF%E5%A2%83/</guid>
+      <description>&lt;p&gt;记录一下利用 Gitea 存储代码、Jenkins 进行持续集成 (CI)，并在 Kubernetes (K8s) 中拉取容器编译代码的 CI/CD 流程。&lt;/p&gt;
+&lt;h1 id=&#34;1-环境搭建&#34;&gt;1. 环境搭建&lt;/h1&gt;
+&lt;p&gt;环境搭建包括gitea部署，jenkins部署和k8s部署。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
