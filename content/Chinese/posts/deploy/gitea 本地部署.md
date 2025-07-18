@@ -1,10 +1,10 @@
 ---
 
 title: "gitea 本地部署"
-date: 2025-06-28
+date: 2025-03-22
 draft: false
 author: "肖青山"
-lastmod: 2025-06-30
+lastmod: 2025-06-23
 draft: false  # 设为 false 发布
 categories: ["git"]
 tags: ["git", "deploy"]
