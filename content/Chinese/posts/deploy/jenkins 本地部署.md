@@ -1,9 +1,9 @@
 ---
 title: "jenkins 本地部署"
-date: 2025-07-12
+date: 2025-03-15
 draft: false
 author: "肖青山"
-lastmod: 2025-07-13
+lastmod: 2025-06-23
 draft: false  # 设为 false 发布
 categories: ["git"]
 tags: ["jenkins", "deploy"]
