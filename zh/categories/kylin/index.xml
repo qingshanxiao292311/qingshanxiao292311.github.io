@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kylin on 肖青山的博客</title>
+    <link>https://qingshanxiao292311.github.io/zh/categories/kylin/</link>
+    <description>Recent content in Kylin on 肖青山的博客</description>
+    <generator>Hugo -- 0.151.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://qingshanxiao292311.github.io/zh/categories/kylin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kylin V10 Server 内核升级</title>
+      <link>https://qingshanxiao292311.github.io/zh/posts/build/kylin-v10--server-%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/posts/build/kylin-v10--server-%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/</guid>
+      <description>&lt;p&gt;​	由于&lt;code&gt;kylin V10 server&lt;/code&gt; 内核版本是&lt;code&gt;4.19.90-25.10.v2101.ky10.aarch64&lt;/code&gt;，当前内核版本过低，导致有些功能不支持或支持不完成，比如&lt;code&gt;io_uring，bpf&lt;/code&gt;等。为了支持新内核的功能，故需要升级&lt;code&gt;kylin v10 server&lt;/code&gt; 的内核版本。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

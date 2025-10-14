@@ -4,10 +4,31 @@
     <title>Tags on 肖青山的博客</title>
     <link>https://qingshanxiao292311.github.io/zh/tags/</link>
     <description>Recent content in Tags on 肖青山的博客</description>
-    <generator>Hugo -- 0.148.1</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://qingshanxiao292311.github.io/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build</title>
+      <link>https://qingshanxiao292311.github.io/zh/tags/build/</link>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/tags/build/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kernel</title>
+      <link>https://qingshanxiao292311.github.io/zh/tags/kernel/</link>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/tags/kernel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OS</title>
+      <link>https://qingshanxiao292311.github.io/zh/tags/os/</link>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://qingshanxiao292311.github.io/zh/tags/os/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Deploy</title>
       <link>https://qingshanxiao292311.github.io/zh/tags/deploy/</link>
